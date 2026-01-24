@@ -1,9 +1,16 @@
-import { OpenAPIHono } from '@hono/zod-openapi'
-
-const app = new OpenAPIHono()
-
-import { createRoute } from '@hono/zod-openapi'
+import { createRoute, OpenAPIHono } from '@hono/zod-openapi'
+import { Scalar } from '@scalar/hono-api-reference'
+import { cache } from 'hono/cache'
+import { cors } from 'hono/cors'
+import { csrf } from 'hono/csrf'
+import { logger } from 'hono/logger'
 import { ParamsSchema, UserSchema } from './schemas/user.dto'
+
+/**
+ * Zod OpenAPI
+ * https://hono.dev/examples/zod-openapi
+ */
+const app = new OpenAPIHono()
 
 const route = createRoute({
   method: 'get',
@@ -27,19 +34,35 @@ app.openapi(route, (c) => {
   const { id } = c.req.valid('param')
   return c.json({
     id,
-    age: 20,
-    name: 'Ultra-man'
+    age: 17,
+    name: 'Ultemica'
   })
 })
 
-// The OpenAPI documentation will be available at /doc
-app.doc('/doc', {
+/**
+ * Zod OpenAPI
+ * https://hono.dev/examples/zod-openapi
+ */
+app.doc('/openapi.json', {
   openapi: '3.0.0',
   info: {
     version: '1.0.0',
-    title: 'My API'
+    title: 'Hono Zod OpenAPI Example'
   }
 })
+
+app.use(
+  '*',
+  logger(),
+  cors(),
+  csrf(),
+  cache({
+    cacheName: 'hono-cache',
+    cacheControl: 'public, max-age=3600'
+  })
+)
+app.notFound((c) => c.redirect('/docs'))
+app.get('/docs', Scalar({ url: '/openapi.json' }))
 
 export default {
   port: 8787,
