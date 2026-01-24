@@ -6,12 +6,16 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "wrangler dev src/index.ts",
+    "dev": "wrangler dev",
     "predeploy": "tsc -b",
     "deploy": "wrangler deploy --env production --minify"
   },
   "dependencies": {
-    "hono": "^4.11.5"
+    "@hono/zod-openapi": "^1.2.0",
+    "@scalar/hono-api-reference": "^0.9.36",
+    "dayjs": "^1.11.19",
+    "hono": "^4.11.5",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.12",
