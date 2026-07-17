@@ -5,20 +5,21 @@
     "": {
       "name": "typescript",
       "dependencies": {
-        "@hono/zod-openapi": "latest",
-        "@scalar/hono-api-reference": "latest",
-        "dayjs": "latest",
-        "hono": "latest",
-        "zod": "latest",
+        "@hono/zod-openapi": "^1.2.4",
+        "@scalar/hono-api-reference": "^0.10.6",
+        "dayjs": "^1.11.20",
+        "hono": "^4.12.11",
+        "zod": "^4.3.6",
       },
       "devDependencies": {
-        "@biomejs/biome": "latest",
-        "@commitlint/config-conventional": "latest",
-        "@types/bun": "latest",
-        "@types/node": "latest",
-        "rimraf": "latest",
-        "typescript": "latest",
-        "wrangler": "latest",
+        "@biomejs/biome": "^2.4.10",
+        "@cloudflare/workers-types": "^5.20260717.1",
+        "@commitlint/config-conventional": "^20.5.0",
+        "@types/bun": "^1.3.11",
+        "@types/node": "^25.5.2",
+        "rimraf": "^6.1.3",
+        "typescript": "^6.0.2",
+        "wrangler": "^4.80.0",
       },
     },
   },
@@ -56,6 +57,8 @@
     "@cloudflare/workerd-linux-arm64": ["@cloudflare/workerd-linux-arm64@1.20260401.1", "", { "os": "linux", "cpu": "arm64" }, "sha512-UgkzpMzVWM/bwbo3vjCTg2aoKfGcUhiEoQoDdo6RGWvbHRJyLVZ4VQCG9ZcISiztkiS2ICCoYOtPy6M/lV6Gcw=="],
 
     "@cloudflare/workerd-windows-64": ["@cloudflare/workerd-windows-64@1.20260401.1", "", { "os": "win32", "cpu": "x64" }, "sha512-HBLzcQF5iF4Qv20tQ++pG7xs3OsCnaIbc+GAi6fmhUKZhvmzvml/jwrQzLJ+MPm0cQo41K5OO/U3T4S8tvJetQ=="],
+
+    "@cloudflare/workers-types": ["@cloudflare/workers-types@5.20260717.1", "", {}, "sha512-En+uoU8kbQoUcJMAPOQU+3hyQ4INEpiPO04GIyuh5b0Q5+uPB6az+icvkl+SoSzN3gbQFHZACpShRY+AK3zD1Q=="],
 
     "@commitlint/config-conventional": ["@commitlint/config-conventional@20.5.0", "", { "dependencies": { "@commitlint/types": "^20.5.0", "conventional-changelog-conventionalcommits": "^9.2.0" } }, "sha512-t3Ni88rFw1XMa4nZHgOKJ8fIAT9M2j5TnKyTqJzsxea7FUetlNdYFus9dz+MhIRZmc16P0PPyEfh6X2d/qw8SA=="],
 
