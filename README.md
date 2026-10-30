@@ -1,6 +1,6 @@
 # Hono + Cloudflare Workers
 
-TypeScript + Bun + Wrangler を使用した Cloudflare Workers プロジェクト
+Hono + Cloudflare Workers を使用した軽量 Web API テンプレートリポジトリです。
 
 ## 技術スタック
 
